@@ -1,0 +1,89 @@
+{
+    "vim.insertModeKeyBindings": [
+        {
+            "before": [
+                "j",
+                "j"
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        },
+        {
+            "before": [
+                "<Esc>",
+            ],
+            "after": [
+                "<Esc>"
+            ]
+        }
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "a"
+            ],
+            "commands": [
+                "editor.action.quickFix"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "<space>"
+            ],
+            "commands": [
+                "workbench.action.quickOpen"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "e"
+            ],
+            "commands": [
+                "workbench.view.explorer",
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "r",
+                "n"
+            ],
+            "commands": [
+                "editor.action.rename"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "g",
+                "r"
+            ],
+            "commands": [
+                "editor.action.goToReferences"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "k"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        },
+        {
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.showHover"
+            ]
+        }
+    ],
+    "vim.useSystemClipboard": true
+}
