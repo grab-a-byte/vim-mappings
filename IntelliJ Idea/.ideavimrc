@@ -8,17 +8,21 @@ let mapleader = " "
 set number
 set relativenumber
 set ignorecase
+hello set showmode
+set surround
+set multiple-cursors
 
 " Do incremental searching.
 set incsearch
 
-set clipboard+=unnamed
 imap jj <Esc>
+nmap <leader>p "*p
+nmap <leader>y "*y
+
 "" -- Suggested options --
 " Show a few lines of context around the cursor. Note that this makes the
-" text scroll if you mouse-click near the start or end of the window.
+" text scroll if you mouse-click near the start or end of the window.:window
 set scrolloff=5
-
 
 " Don't use Ex mode, use Q for formatting.
 map Q gq
@@ -29,17 +33,32 @@ map Q gq
 Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
 Plug 'tpope/vim-commentary'
+"Nerd Tree plugin"
+Plug 'preservim/nerdtree'
 
 
 "" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
-:map <leader>rn <Action>(RenameElement)
-:map <leader>gr <Action>(FindUsages)
-:map <leader><space> <Action>(SearchEverywhere)
-:map <leader>ca <Action>(ShowIntentionActions)
-:map <leader>cf <Action>(ReformatCode)
+:nmap <leader>rn <Action>(RenameElement)
+:nmap <leader>gr <Action>(FindUsages)
+:nmap <leader><space> <Action>(SearchEverywhere)
+:nmap <leader>ca <Action>(ShowIntentionActions)
+:nmap <leader>cf <Action>(ReformatCode)
+:nmap <C-e> <Action>(ActivateProjectToolWindow)
+:map <leader>b <Action>(Switcher)
+:nmap <leader>t <Action>(ActivateTerminalToolWindow)
+:nmap <leader>sd <Action>(ActivateProblemsViewToolWindow)
+
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+nmap <leader>pf <Action>(MethodUp)
+nmap <leader>nf <Action>(MethodDown)
 
 "" Map <leader>d to start debug
-"map <leader>d <Action>(Debug)
+map <leader>d <Action>(Debug)
 
 "" Map \b to toggle the breakpoint on the current line
-"map \b <Action>(ToggleLineBreakpoint)
+map \b <Action>(ToggleLineBreakpoint)
+
+"" Map \b to toggle the breakpoint on the current line
+map \b <Action>(ToggleLineBreakpoint)
