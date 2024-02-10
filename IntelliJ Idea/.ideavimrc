@@ -47,6 +47,19 @@ Plug 'preservim/nerdtree'
 :map <leader>b <Action>(Switcher)
 :nmap <leader>t <Action>(ActivateTerminalToolWindow)
 :nmap <leader>sd <Action>(ActivateProblemsViewToolWindow)
+:nmap <leader>gd <Action>(GotoDeclaration)
+
+vnoremap <C-j> :m '>+1<CR>gv=gv
+vnoremap <C-k> :m '<-2<CR>gv=gv
+
+nmap <leader>pf <Action>(MethodUp)
+nmap <leader>nf <Action>(MethodDown)
+
+"" Map <leader>d to start debug
+map <leader>d <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+map \b <Action>(ToggleLineBreakpoint)
 
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
