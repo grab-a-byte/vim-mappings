@@ -1,14 +1,9 @@
-" .ideavimrc is a configuration file for IdeaVim plugin. It uses
-"   the same commands as the original .vimrc configuration.
-" You can find a list of commands here: https://jb.gg/h38q75
-" Find more examples here: https://jb.gg/share-ideavimrc
-
 let mapleader = " "
 
 set number
 set relativenumber
 set ignorecase
-hello set showmode
+set showmode
 set surround
 set multiple-cursors
 
@@ -28,7 +23,6 @@ set scrolloff=5
 map Q gq
 
 " --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
-
 " Highlight copied text
 Plug 'machakann/vim-highlightedyank'
 " Commentary plugin
@@ -43,14 +37,24 @@ Plug 'preservim/nerdtree'
 :nmap <leader><space> <Action>(SearchEverywhere)
 :nmap <leader>ca <Action>(ShowIntentionActions)
 :nmap <leader>cf <Action>(ReformatCode)
-:nmap <C-e> <Action>(ActivateProjectToolWindow)
+:nmap <leader>e <Action>(ActivateProjectToolWindow)
 :map <leader>b <Action>(Switcher)
 :nmap <leader>t <Action>(ActivateTerminalToolWindow)
 :nmap <leader>sd <Action>(ActivateProblemsViewToolWindow)
 :nmap <leader>gd <Action>(GotoDeclaration)
+:nmap <leader>gI <Action>(GotoImplementation)
 
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
+
+nmap <leader>pf <Action>(MethodUp)
+nmap <leader>nf <Action>(MethodDown)
+
+"" Map <leader>d to start debug
+map <leader>dc <Action>(Debug)
+
+"" Map \b to toggle the breakpoint on the current line
+map \b <Action>(ToggleLineBreakpoint)
 
 nmap <leader>pf <Action>(MethodUp)
 nmap <leader>nf <Action>(MethodDown)
@@ -61,17 +65,16 @@ map <leader>d <Action>(Debug)
 "" Map \b to toggle the breakpoint on the current line
 map \b <Action>(ToggleLineBreakpoint)
 
-vnoremap <C-j> :m '>+1<CR>gv=gv
-vnoremap <C-k> :m '<-2<CR>gv=gv
+"" Ctrl direction to move between splits
+noremap <C-h> <C-w>h
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
 
-nmap <leader>pf <Action>(MethodUp)
-nmap <leader>nf <Action>(MethodDown)
+""Create Splits
+nnoremap <leader>\ <C-w>v
+nnoremap <leader>- <C-w>s
 
-"" Map <leader>d to start debug
-map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-map \b <Action>(ToggleLineBreakpoint)
-
-"" Map \b to toggle the breakpoint on the current line
-map \b <Action>(ToggleLineBreakpoint)
+""Buffer/Tab avigation
+nnoremap <A-h> :tabprevious<CR>
+nnoremap <A-l> :tabnext<CR>
