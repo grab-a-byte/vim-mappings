@@ -1,4 +1,4 @@
-let mapleader = " "
+set mapleader = " "
 
 set number
 set relativenumber
@@ -47,8 +47,8 @@ Plug 'preservim/nerdtree'
 vnoremap <C-j> :m '>+1<CR>gv=gv
 vnoremap <C-k> :m '<-2<CR>gv=gv
 
-nmap <leader>pf <Action>(MethodUp)
-nmap <leader>nf <Action>(MethodDown)
+nmap [[ <Action>(MethodUp)
+nmap ]] <Action>(MethodDown)
 
 "" Map <leader>d to start debug
 map <leader>dc <Action>(Debug)
@@ -56,25 +56,23 @@ map <leader>dc <Action>(Debug)
 "" Map \b to toggle the breakpoint on the current line
 map \b <Action>(ToggleLineBreakpoint)
 
-nmap <leader>pf <Action>(MethodUp)
-nmap <leader>nf <Action>(MethodDown)
-
-"" Map <leader>d to start debug
-map <leader>d <Action>(Debug)
-
-"" Map \b to toggle the breakpoint on the current line
-map \b <Action>(ToggleLineBreakpoint)
-
 "" Ctrl direction to move between splits
-noremap <C-h> <C-w>h
-noremap <C-j> <C-w>j
-noremap <C-k> <C-w>k
-noremap <C-l> <C-w>l
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
 
 ""Create Splits
 nnoremap <leader>\ <C-w>v
 nnoremap <leader>- <C-w>s
 
-""Buffer/Tab avigation
+""Buffer/Tab navigation
 nnoremap <A-h> :tabprevious<CR>
 nnoremap <A-l> :tabnext<CR>
+
+""Increase and Decrease selections
+:nmap <C-space> <Action>(EditorSelectWord)
+:vmap <C-space> <Action>(EditorSelectWord)
+:vmap <backspace> <Action>(EditorUnSelectWord)
+
+:nmap <leader>ds <Action>(ActivateStructureToolWindow)
