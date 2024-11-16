@@ -1,5 +1,7 @@
-{
-    "vim.insertModeKeyBindings": [
+    "vim.leader": " ",
+    "vim.hlsearch": true,
+    "vim.incsearch": true,
+    "vim.insertModeKeyBindingsNonRecursive": [
         {
             "before": [
                 "j",
@@ -9,17 +11,54 @@
                 "<Esc>"
             ]
         },
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
         {
+            // Move lines down
             "before": [
-                "<Esc>",
+                "J"
+            ],
+            "commands": [
+                "editor.action.moveLinesDownAction"
+            ]
+        },
+        {
+            // Move line up
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.moveLinesUpAction"
+            ]
+        },
+        {
+            //yank to Clipboard
+            "before": [
+                "<leader>",
+                "y"
             ],
             "after": [
-                "<Esc>"
+                "\"",
+                "+",
+                "y"
+            ]
+        },
+        {
+            // Paste from clipboard
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "p"
             ]
         }
     ],
-    "vim.normalModeKeyBindings": [
+    "vim.normalModeKeyBindingsNonRecursive": [
         {
+            //Code Action
             "before": [
                 "<leader>",
                 "c",
@@ -27,6 +66,17 @@
             ],
             "commands": [
                 "editor.action.quickFix"
+            ]
+        },
+        {
+            //Format Document
+            "before": [
+                "<leader>",
+                "c",
+                "f"
+            ],
+            "commands": [
+                "editor.action.formatDocument"
             ]
         },
         {
@@ -48,6 +98,7 @@
             ]
         },
         {
+            //Rename
             "before": [
                 "<leader>",
                 "r",
@@ -64,7 +115,7 @@
                 "r"
             ],
             "commands": [
-                "editor.action.goToReferences"
+                "references-view.findReferences"
             ]
         },
         {
@@ -83,7 +134,179 @@
             "commands": [
                 "editor.action.showHover"
             ]
+        },
+        {
+            //Split editor sideways
+            "before": [
+                "<leader>",
+                "|"
+            ],
+            "commands": [
+                "workbench.action.splitEditor"
+            ]
+        },
+        {
+            //Split editor below
+            "before": [
+                "<leader>",
+                "-"
+            ],
+            "commands": [
+                "workbench.action.splitEditorDown"
+            ]
+        },
+        {
+            // Go to left window
+            "before": [
+                "<C-h>"
+            ],
+            "after": [
+                "<C-W>",
+                "h"
+            ]
+        },
+        {
+            // Go to lower window
+            "before": [
+                "<C-j>"
+            ],
+            "after": [
+                "<C-W>",
+                "j"
+            ]
+        },
+        {
+            // Go to upper window
+            "before": [
+                "<C-k>"
+            ],
+            "after": [
+                "<C-W>",
+                "k"
+            ]
+        },
+        {
+            // Go to right window
+            "before": [
+                "<C-l>"
+            ],
+            "after": [
+                "<C-W>",
+                "l"
+            ]
+        },
+        {
+            // Increase window height
+            "before": [
+                "<C-Up>"
+            ],
+            "commands": [
+                "workbench.action.increaseViewHeight"
+            ]
+        },
+        {
+            // Decrease window height
+            "before": [
+                "<C-Up>"
+            ],
+            "commands": [
+                "workbench.action.decreaseViewHeight"
+            ]
+        },
+        {
+            // Decrease window width
+            "before": [
+                "<C-left>"
+            ],
+            "commands": [
+                "workbench.action.decreaseViewWidth"
+            ]
+        },
+        {
+            // Increase window width
+            "before": [
+                "<C-Right>"
+            ],
+            "commands": [
+                "workbench.action.increaseViewWidth"
+            ]
+        },
+        {
+            // Prev buffer
+            "before": [
+                "<S-h>"
+            ],
+            "commands": [
+                ":bprev"
+            ]
+        },
+        {
+            // Next buffer
+            "before": [
+                "<S-l>"
+            ],
+            "commands": [
+                ":bnext"
+            ]
+        },
+        {
+            // Prev buffer
+            "before": [
+                "[",
+                "b"
+            ],
+            "commands": [
+                ":bprev"
+            ]
+        },
+        {
+            // Next buffer
+            "before": [
+                "]",
+                "b"
+            ],
+            "commands": [
+                ":bnext"
+            ]
+        },
+        {
+            // Move lines down
+            "before": [
+                "J"
+            ],
+            "commands": [
+                "editor.action.moveLinesDownAction"
+            ]
+        },
+        {
+            // Move lines up
+            "before": [
+                "K"
+            ],
+            "commands": [
+                "editor.action.moveLinesUpAction"
+            ]
+        },
+        {
+            "before": [
+                "<leader>",
+                "c",
+                "s"
+            ],
+            "commands": [
+                "breadcrumbs.focusAndSelect"
+            ],
+        },
+        {
+            // Paste from clipboard
+            "before": [
+                "<leader>",
+                "p"
+            ],
+            "after": [
+                "\"",
+                "+",
+                "p"
+            ]
         }
     ],
-    "vim.useSystemClipboard": true
-}
