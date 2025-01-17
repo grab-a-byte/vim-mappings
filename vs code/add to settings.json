@@ -14,24 +14,6 @@
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         {
-            // Move lines down
-            "before": [
-                "J"
-            ],
-            "commands": [
-                "editor.action.moveLinesDownAction"
-            ]
-        },
-        {
-            // Move line up
-            "before": [
-                "K"
-            ],
-            "commands": [
-                "editor.action.moveLinesUpAction"
-            ]
-        },
-        {
             //yank to Clipboard
             "before": [
                 "<leader>",
@@ -250,44 +232,6 @@
             ]
         },
         {
-            // Prev buffer
-            "before": [
-                "[",
-                "b"
-            ],
-            "commands": [
-                ":bprev"
-            ]
-        },
-        {
-            // Next buffer
-            "before": [
-                "]",
-                "b"
-            ],
-            "commands": [
-                ":bnext"
-            ]
-        },
-        {
-            // Move lines down
-            "before": [
-                "J"
-            ],
-            "commands": [
-                "editor.action.moveLinesDownAction"
-            ]
-        },
-        {
-            // Move lines up
-            "before": [
-                "K"
-            ],
-            "commands": [
-                "editor.action.moveLinesUpAction"
-            ]
-        },
-        {
             "before": [
                 "<leader>",
                 "c",
@@ -308,5 +252,14 @@
                 "+",
                 "p"
             ]
+        },
+        {
+           "before": [
+            "<leader>",
+            "z"
+           ],
+           "commands": [
+            "workbench.action.toggleSidebarVisibility"
+           ]
         }
     ],
